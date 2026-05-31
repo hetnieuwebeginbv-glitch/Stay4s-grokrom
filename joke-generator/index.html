@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Random Joke Generator - Get funny jokes from multiple categories">
+    <title>Random Joke Generator</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-fluid bg-gradient min-vh-100 d-flex align-items-center justify-content-center py-5">
+        <div class="container max-width-container">
+            <!-- Header -->
+            <div class="text-center mb-5">
+                <h1 class="display-4 fw-bold text-white mb-3">
+                    😂 Random Joke Generator
+                </h1>
+                <p class="lead text-light">Get a laugh with jokes from multiple categories!</p>
+            </div>
+
+            <!-- Main Card -->
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="card shadow-lg border-0 glass-effect">
+                        <div class="card-body p-5">
+                            
+                            <!-- Category Selection -->
+                            <div class="mb-4">
+                                <label for="jokeCategory" class="form-label fw-semibold text-dark mb-3">
+                                    🎯 Select a Joke Category:
+                                </label>
+                                <select class="form-select form-select-lg" id="jokeCategory">
+                                    <option value="Programming">👨‍💻 Programming Jokes</option>
+                                    <option value="Misc">🎪 Miscellaneous Jokes</option>
+                                    <option value="Dark">🌑 Dark Jokes</option>
+                                    <option value="Pun">🎯 Pun Jokes</option>
+                                    <option value="Spooky">👻 Spooky Jokes</option>
+                                    <option value="Christmas">🎄 Christmas Jokes</option>
+                                    <option value="ChuckNorris">💪 Chuck Norris Facts</option>
+                                </select>
+                            </div>
+
+                            <!-- Joke Display Area -->
+                            <div class="joke-container mb-4">
+                                <div class="card bg-light border-2" id="jokeDisplay">
+                                    <div class="card-body text-center py-5">
+                                        <p class="text-muted mb-0">Click "Get Joke" to see a joke.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Loading Spinner -->
+                            <div id="loadingSpinner" class="text-center mb-4" style="display: none;">
+                                <div class="spinner-border spinner-border-sm text-primary" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <p class="text-muted mt-2">Fetching joke...</p>
+                            </div>
+
+                            <!-- Error Message -->
+                            <div id="errorMessage" class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none;">
+                                <span id="errorText"></span>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+
+                            <!-- Buttons -->
+                            <div class="button-group d-grid gap-2 d-md-flex">
+                                <button class="btn btn-primary btn-lg" id="getJokeBtn">
+                                    <span class="me-2">🎲</span>Get Joke
+                                </button>
+                                <button class="btn btn-outline-secondary btn-lg" id="shareJokeBtn">
+                                    <span class="me-2">📢</span>Share
+                                </button>
+                                <button class="btn btn-outline-secondary btn-lg" id="copyJokeBtn">
+                                    <span class="me-2">📋</span>Copy
+                                </button>
+                            </div>
+
+                            <!-- Stats -->
+                            <div class="mt-4 pt-3 border-top">
+                                <small class="text-muted d-flex justify-content-between">
+                                    <span>Jokes Fetched: <strong id="jokeCount">0</strong></span>
+                                    <span>Category: <strong id="categoryDisplay">None</strong></span>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="text-center mt-5">
+                <small class="text-light">
+                    Powered by <a href="https://jokeapi.dev/" target="_blank" class="text-light">JokeAPI</a>, 
+                    <a href="https://official-joke-api.appspot.com/" target="_blank" class="text-light">Official Joke API</a>, 
+                    and <a href="https://api.chucknorris.io/" target="_blank" class="text-light">Chuck Norris API</a>
+                </small>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

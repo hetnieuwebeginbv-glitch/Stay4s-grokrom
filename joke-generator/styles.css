@@ -1,0 +1,366 @@
+/* ===================================
+   RANDOM JOKE GENERATOR - STYLES
+   =================================== */
+
+/* Root Variables */
+:root {
+    --primary-color: #6366f1;
+    --secondary-color: #ec4899;
+    --success-color: #10b981;
+    --danger-color: #ef4444;
+    --warning-color: #f59e0b;
+    --dark-color: #1f2937;
+    --light-color: #f9fafb;
+    --border-radius: 12px;
+    --transition: all 0.3s ease-in-out;
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Animated Background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.bg-gradient {
+    position: relative;
+    z-index: 2;
+}
+
+/* Container */
+.max-width-container {
+    max-width: 900px;
+}
+
+/* Card Styling */
+.card {
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius) !important;
+    transition: var(--transition);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+}
+
+.glass-effect {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Forms */
+.form-label {
+    color: var(--dark-color) !important;
+    font-size: 1rem;
+}
+
+.form-select {
+    border: 2px solid #e5e7eb;
+    border-radius: var(--border-radius) !important;
+    color: var(--dark-color);
+    transition: var(--transition);
+    padding: 0.75rem 1rem;
+}
+
+.form-select:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 0.2rem rgba(99, 102, 241, 0.25) !important;
+    color: var(--dark-color);
+}
+
+.form-select option {
+    color: var(--dark-color);
+    background-color: white;
+}
+
+/* Joke Display Container */
+.joke-container {
+    min-height: 180px;
+    display: flex;
+    align-items: stretch;
+}
+
+#jokeDisplay {
+    width: 100%;
+    border-radius: var(--border-radius) !important;
+    background: linear-gradient(135deg, #f0f4ff 0%, #fff0f9 100%);
+    border: 2px solid #e0e7ff !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+#jokeDisplay .card-body {
+    width: 100%;
+}
+
+#jokeDisplay .joke-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--dark-color);
+    margin: 0;
+}
+
+#jokeDisplay .joke-setup {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+#jokeDisplay .joke-delivery {
+    font-weight: 500;
+    color: var(--secondary-color);
+    margin-top: 0.5rem;
+}
+
+/* Buttons */
+.btn {
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    transition: var(--transition);
+    border: 2px solid transparent;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
+    border: none;
+    color: white;
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+    background: linear-gradient(135deg, #4f46e5 0%, #db2777 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3) !important;
+    color: white;
+    border: none;
+}
+
+.btn-outline-secondary {
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-secondary:active,
+.btn-outline-secondary:focus {
+    background-color: white;
+    color: var(--primary-color);
+    border-color: white;
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Button Group */
+.button-group {
+    gap: 1rem;
+}
+
+/* Loading Spinner */
+.spinner-border-sm {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+#loadingSpinner {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Alert Messages */
+.alert {
+    border-radius: var(--border-radius);
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.alert-danger {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.alert-success {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+
+.display-4 {
+    font-weight: 800;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.lead {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+/* Footer */
+.text-light a {
+    color: white !important;
+    opacity: 0.9;
+}
+
+.text-light a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.slide-in {
+    animation: slideIn 0.5s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 2rem;
+    }
+
+    .card-body {
+        padding: 2rem !important;
+    }
+
+    .button-group {
+        display: grid !important;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    #jokeDisplay {
+        min-height: 150px;
+        padding: 1.5rem;
+    }
+
+    .form-select {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .display-4 {
+        font-size: 1.75rem;
+    }
+
+    .lead {
+        font-size: 1rem;
+    }
+
+    .card-body {
+        padding: 1.5rem !important;
+    }
+
+    #jokeDisplay .joke-text {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+    }
+
+    .btn,
+    .form-select {
+        display: none;
+    }
+
+    #jokeDisplay {
+        border: 1px solid #ddd;
+        box-shadow: none;
+    }
+}
