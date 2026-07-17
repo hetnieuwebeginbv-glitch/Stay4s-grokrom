@@ -7,19 +7,19 @@ out/
 *.tar.gz
 *.tar.bz2
 
-# Build Directories
+# Build Directories (repo root only — do NOT ignore nested grokphone-rom/*)
 .repo/
-build/
-vendor/
-system/
-product/
-system_ext/
+/build/
+/vendor/
+/system/
+/product/
+/system_ext/
 
-# LineageOS/AOSP Specific
-device/
-kernel/
-prebuilts/
-bionic/
+# LineageOS/AOSP Specific (root tree only; grokphone-rom/device must be tracked)
+/device/
+/kernel/
+/prebuilts/
+/bionic/
 
 # Cache and Temp Files
 .ccache/
